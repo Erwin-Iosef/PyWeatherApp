@@ -1,5 +1,5 @@
 #-------------------------------------------------------------------------------
-# Name:         File2.pyw
+# Name:         Pyweather.pyw
 # Purpose:
 #
 # Author: Erwin-Iosef
