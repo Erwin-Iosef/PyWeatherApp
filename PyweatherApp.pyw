@@ -1,5 +1,5 @@
 #-------------------------------------------------------------------------------
-# Name:         Pyweather.pyw
+# Name:         PyweatherApp.pyw
 # Purpose:
 #
 # Author: Erwin-Iosef
