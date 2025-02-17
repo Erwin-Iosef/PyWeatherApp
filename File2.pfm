@@ -1,0 +1,438 @@
+object File2: TFGUIForm
+  Left = 659
+  Top = 268
+  BorderIcons = [biSystemMenu]
+  Caption = 'Welcome to the Weather Program'
+  ClientHeight = 450
+  ClientWidth = 875
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  FormStyle = fsStayOnTop
+  Position = poDesigned
+  Visible = True
+  OnAfterMonitorDpiChanged = FormAfterMonitorDpiChanged
+  OnCanResize = FormCanResize
+  OnClose = FormClose
+  OnCloseQuery = FormCloseQuery
+  OnDestroy = FormDestroy
+  OnResize = FormResize
+  AlwaysOnTop = False
+  Background = clBtnFace
+  Fullscreen = False
+  Iconified = False
+  MaxHeight = 0
+  MaxWidth = 0
+  MinHeight = 0
+  MinWidth = 0
+  Resizable = True
+  Title = 'Welcome to the Weather Program'
+  Theme = vista
+  Transparency = 1.00000000000000000
+  Undecorated = False
+  Activate = Activate
+  ButtonPress = ButtonPress
+  ButtonRelease = ButtonRelease
+  Configure = Configure
+  Deactivate = Deactivate
+  Destroy_ = Destroy
+  Enter = Enter
+  Expose = Expose
+  FocusIn = FocusIn
+  FocusOut = FocusOut
+  KeyPress = KeyPressName
+  KeyRelease = KeyRelease
+  Leave = Leave
+  Motion = Motion
+  MouseWheel = MouseWheel
+  Visibility = Visibility
+  Animated = False
+  DockNestingEnabled = False
+  DocumentMode = False
+  TabShape = Rounded
+  ToolButtonStyle = ToolButtonIconOnly
+  TextHeight = 15
+  object lWeatherProgram: TKLabel
+    Tag = 1
+    Left = 224
+    Top = 24
+    Width = 152
+    Height = 24
+    Hint = 'label1'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    x = 224
+    y = 24
+    BorderWidth = '2'
+    ActiveBackground = clBtnFace
+    Anchor = _TA_n
+    DisabledForeground = clGrayText
+    HighlightBackground = clBtnFace
+    HighlightColor = clWindowFrame
+    HighlightThickness = '0'
+    PadX = '1'
+    PadY = '1'
+    Text = 'Weather Program'
+    WrapLength = '0'
+  end
+  object bRun: TKButton
+    Tag = 4
+    Left = 144
+    Top = 376
+    Width = 80
+    Height = 24
+    Hint = 'button1'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    x = 144
+    y = 376
+    BorderWidth = '2'
+    Relief = _TR_raised
+    ActiveBackground = clBtnFace
+    DisabledForeground = clGrayText
+    HighlightBackground = clBtnFace
+    HighlightColor = clWindowFrame
+    HighlightThickness = '1'
+    PadX = '1'
+    PadY = '1'
+    Text = 'Run'
+    WrapLength = '0'
+    Command = True
+  end
+  object bExit: TKButton
+    Tag = 4
+    Left = 392
+    Top = 376
+    Width = 80
+    Height = 24
+    Hint = 'button2'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    x = 392
+    y = 376
+    BorderWidth = '2'
+    Relief = _TR_raised
+    ActiveBackground = clBtnFace
+    DisabledForeground = clGrayText
+    HighlightBackground = clBtnFace
+    HighlightColor = clWindowFrame
+    HighlightThickness = '1'
+    PadX = '1'
+    PadY = '1'
+    Text = 'Exit'
+    WrapLength = '0'
+    Command = True
+  end
+  object outputfilewrite: TKCheckbutton
+    Tag = 5
+    Left = 264
+    Top = 208
+    Width = 32
+    Height = 32
+    Hint = 'checkbutton1'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    x = 264
+    y = 208
+    BorderWidth = '2'
+    ActiveBackground = clBtnFace
+    ActiveForeground = clWindowText
+    Anchor = _TA_n
+    DisabledForeground = clGrayText
+    HighlightBackground = clBtnFace
+    HighlightColor = clWindowFrame
+    HighlightThickness = '1'
+    PadX = '1'
+    PadY = '1'
+    Text = ''
+    WrapLength = '0'
+    Command = False
+    OffValue = '0'
+    OnValue = '1'
+  end
+  object lEnterthenameoftheCity: TKLabel
+    Tag = 1
+    Left = 112
+    Top = 88
+    Width = 232
+    Height = 24
+    Hint = 'label1'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    x = 112
+    y = 88
+    BorderWidth = '2'
+    ActiveBackground = clBtnFace
+    Anchor = _TA_w
+    DisabledForeground = clGrayText
+    HighlightBackground = clBtnFace
+    HighlightColor = clWindowFrame
+    HighlightThickness = '0'
+    PadX = '1'
+    PadY = '1'
+    Text = 'Enter the name of the City:'
+    WrapLength = '0'
+  end
+  object lSelecttheoutputformat: TKLabel
+    Tag = 1
+    Left = 112
+    Top = 152
+    Width = 152
+    Height = 24
+    Hint = 'label2'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    x = 112
+    y = 152
+    BorderWidth = '2'
+    ActiveBackground = clBtnFace
+    Anchor = _TA_w
+    DisabledForeground = clGrayText
+    HighlightBackground = clBtnFace
+    HighlightColor = clWindowFrame
+    HighlightThickness = '0'
+    PadX = '1'
+    PadY = '1'
+    Text = 'Select the output format:'
+    WrapLength = '0'
+  end
+  object lWriteOutputfile: TKLabel
+    Tag = 1
+    Left = 112
+    Top = 208
+    Width = 120
+    Height = 24
+    Hint = 'label1'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    x = 112
+    y = 208
+    BorderWidth = '2'
+    ActiveBackground = clBtnFace
+    Anchor = _TA_w
+    DisabledForeground = clGrayText
+    HighlightBackground = clBtnFace
+    HighlightColor = clWindowFrame
+    HighlightThickness = '0'
+    PadX = '1'
+    PadY = '1'
+    Text = 'Write Output file'
+    WrapLength = '0'
+  end
+  object cityname: TKEntry
+    Tag = 2
+    Left = 408
+    Top = 88
+    Width = 160
+    Height = 25
+    Cursor = crIBeam
+    Hint = 'entry1'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    x = 408
+    y = 88
+    Background = clWindow
+    BorderWidth = '1'
+    Relief = _TR_sunken
+    HighlightBackground = clBtnFace
+    HighlightColor = clWindowFrame
+    HighlightThickness = '0'
+    InsertBorderwidth = '0'
+    InsertWidth = '2'
+    InvalidCommand = False
+    Justify = _TJ_left
+    State = disabled
+    Text = ''
+    ValidateCommand = False
+  end
+  object outputformat: TKOptionMenu
+    Tag = 18
+    Left = 408
+    Top = 152
+    Width = 160
+    Height = 32
+    Hint = 'optionMenu1'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    x = 408
+    y = 152
+    BorderWidth = '1'
+    Relief = _TR_raised
+    ActiveBackground = clBtnFace
+    DisabledForeground = clGrayText
+    HighlightBackground = clBtnFace
+    HighlightColor = clWindowFrame
+    HighlightThickness = '2'
+    PadX = '5'
+    PadY = '4'
+    Text = 'Select'
+    WrapLength = '0'
+    MenuItems.Strings = (
+      '')
+  end
+  object TimeDisplay: TKLabelframe
+    Tag = 14
+    Left = 400
+    Top = 224
+    Width = 176
+    Height = 104
+    Hint = 'labelframe1'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    x = 400
+    y = 224
+    BorderWidth = '2'
+    Relief = _TR_solid
+    HighlightBackground = clBtnFace
+    HighlightColor = clWindowFrame
+    HighlightThickness = '0'
+    LabelAnchor = _TL_n
+    Text = 'Display Time'
+    object cbLocalTime: TKCheckbutton
+      Tag = 5
+      Left = 24
+      Top = 8
+      Width = 128
+      Height = 32
+      Hint = 'checkbutton1'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -12
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      x = 24
+      y = 8
+      BorderWidth = '2'
+      ActiveBackground = clBtnFace
+      ActiveForeground = clWindowText
+      Anchor = _TA_w
+      DisabledForeground = clGrayText
+      HighlightBackground = clBtnFace
+      HighlightColor = clWindowFrame
+      HighlightThickness = '1'
+      PadX = '1'
+      PadY = '1'
+      Text = 'Local Time'
+      WrapLength = '0'
+      Command = False
+      OffValue = '0'
+      OnValue = '1'
+    end
+    object cbCurrentTime: TKCheckbutton
+      Tag = 5
+      Left = 24
+      Top = 40
+      Width = 128
+      Height = 32
+      Hint = 'checkbutton2'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -12
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      x = 24
+      y = 40
+      BorderWidth = '2'
+      ActiveBackground = clBtnFace
+      ActiveForeground = clWindowText
+      Anchor = _TA_w
+      DisabledForeground = clGrayText
+      HighlightBackground = clBtnFace
+      HighlightColor = clWindowFrame
+      HighlightThickness = '1'
+      PadX = '1'
+      PadY = '1'
+      Text = 'Current Time'
+      WrapLength = '0'
+      Command = False
+      OffValue = '0'
+      OnValue = '1'
+    end
+    object label1: TTKLabel
+      Tag = 31
+      Left = 64
+      Top = 40
+      Width = 1
+      Height = 17
+      Hint = 'label1'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -12
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      x = 64
+      y = 40
+      Padding = ''
+      Text = 'Label'
+      Anchor = _TA_w
+      BorderWidth = '0'
+      Justify = _TJ_left
+      Wraplength = '0'
+    end
+  end
+  object ButtonPress: TEvent
+  end
+  object ButtonRelease: TEvent
+  end
+  object KeyPressName: TEvent
+  end
+  object KeyRelease: TEvent
+  end
+  object Activate: TEvent
+  end
+  object Configure: TEvent
+  end
+  object Deactivate: TEvent
+  end
+  object Destroy: TEvent
+  end
+  object Enter: TEvent
+  end
+  object Expose: TEvent
+  end
+  object FocusIn: TEvent
+  end
+  object FocusOut: TEvent
+  end
+  object Leave: TEvent
+  end
+  object MouseWheel: TEvent
+  end
+  object Motion: TEvent
+  end
+  object Visibility: TEvent
+  end
+end
