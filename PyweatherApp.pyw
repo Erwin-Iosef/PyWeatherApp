@@ -151,10 +151,7 @@ class app(ttk.Frame):
           with open('weather.log', 'a',encoding='utf-8') as file:
            file.write(self.outputformatCV.get()+'\n')
            file.write(self.output)
-        #msg=QMessageBox()
-        #msg.setWindowTitlw("Lol")
-        #msg.setText(self.outputformatCV.get(),output)
-        #msg.exec_()
+		  
         if self.databasefilebool.get():
          self.i+=1
          self.outputvalrea=data.text.split()
