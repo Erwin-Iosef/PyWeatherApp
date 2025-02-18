@@ -15,6 +15,7 @@
 # Made possible by wttr.in
 #-------------------------------------------------------------------------------
 
+#Commented code is for debugging#
 import tkinter as tk
 import tkinter.ttk as ttk
 from tkinter.messagebox import showinfo
@@ -130,7 +131,7 @@ class app(ttk.Frame):
           self.TimeDisplay="%T"
         else:
          self.TimeDisplay=""
-
+	print("----CONSOLE LOG----\n")
         if not self.cityname.get():
             showinfo("Warning", "Enter a name")
         else:
@@ -158,7 +159,7 @@ class app(ttk.Frame):
          self.i+=1
          self.outputvalrea=data.text.split()
          
-         print(self.outputvalrea)
+         #print(self.outputvalrea)
          if self.cbCurrentTimeCV.get()==True and self.cbLocalTimeCV.get()==True:
              if len(self.outputvalrea)<5:
                  self.outputvalrea.insert(2,'')
@@ -170,15 +171,15 @@ class app(ttk.Frame):
          if len(self.outputvalrea)>5:
             self.concatextra=[' '.join(self.outputvalrea[2:4])]
             self.outputvalrea=self.outputvalrea[:2] + self.concatextra + self.outputvalrea[4:]
-         print("lol",self.outputvalrea)
+         print(self.outputvalrea)
          if len(self.outputvalrea)==4:
              self.outputval=''.join(self.outputvalrea[1:2])
          else:
              self.outputval=''.join(self.outputvalrea[1:3])
-         print("here's ouput", self.outputval)
+         #print("here's ouput", self.outputval)
          self.current_time=''.join(self.outputvalrea[-1])
          self.local_time=''.join(self.outputvalrea[-2]) 
-         print(self.current_time,self.local_time)
+        #print(self.current_time,self.local_time)
          self.database()
         pass
 
@@ -195,7 +196,6 @@ class app(ttk.Frame):
          cursor.execute('DROP TABLE IF EXISTS WeatherReport')
          conn.commit()
 		# Create table
-        print(self.i)
         cursor.execute('''CREATE TABLE IF NOT EXISTS WeatherReport (
         			"SI.NO" integer(10) PRIMARY KEY, 
         			 Place varchar(20), 
@@ -219,8 +219,8 @@ class app(ttk.Frame):
         cursor.execute('SELECT * FROM WeatherReport')
         rows=cursor.fetchall()
         rowsval=print(*rows,sep='\n')
-        with open('weather.log', 'a',encoding='utf-8') as file:
-         print(*rows,sep='\n',file=file)
+        #with open('weather.log', 'a',encoding='utf-8') as file:
+         #print(*rows,sep='\n',file=file)
          
         if showtable==True:
          message="\n".join([str(row) for row in rows])
