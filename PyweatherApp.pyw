@@ -1,6 +1,6 @@
 #-------------------------------------------------------------------------------
 # Name:         PyweatherApp.pyw
-# Purpose:
+# Purpose:      A frontend for wttr.in written in Ttk and Tkinter.
 #
 # Author: Erwin-Iosef
 #
@@ -9,9 +9,10 @@
 #       https://github.com/groehner/guipy/
 #
 # Sun-Valley-ttk-theme by https://github.com/rdbende/Sun-Valley-ttk-theme/tree/main
+# And the Ttk, sqlite3 and requests modules.
 #
 # Copyright:    (c)  2024
-# Licence: Nothing
+# Licence: Apache License Version 2.0, January 2004.
 # Made possible by wttr.in
 #-------------------------------------------------------------------------------
 
@@ -29,13 +30,14 @@ class app(ttk.Frame):
         self.i=-1
         self.root = tk.Tk()
         super().__init__(self.root)
-        self.root.geometry('612x480')
+        self.root.geometry('680x480')
         self.root.title('Welcome to the Weather Program')
         self.create_widgets()
         self.mainloop()
-        
 
     def create_widgets(self):
+        print("----CONSOLE LOG----\n")
+        print("---SQL Data Fields---\nSI.NO  Place  Output_Format  OutputFile  Local_Time  Current_Time\n")
         sv_ttk.set_theme("light")
         self.dasd = tk.Menu(tearoff=0)
         self.lWeatherProgram = ttk.Label(anchor='n')
@@ -93,7 +95,7 @@ class app(ttk.Frame):
         self.outputformatCV = tk.StringVar(self.root)
         self.outputformatCV.set(list(self.options.keys())[0])
         self.outputformat = ttk.OptionMenu(self.root, self.outputformatCV, *self.options.keys())
-        self.outputformat.place(x=408, y=152, width=160, height=32)
+        self.outputformat.place(x=408, y=152)
         self.outputformat['text'] = 'Select'
         self.TimeDisplay = ttk.LabelFrame()
         self.TimeDisplay.place(x=400, y=224, width=176, height=104)
@@ -131,9 +133,9 @@ class app(ttk.Frame):
           self.TimeDisplay="%T"
         else:
          self.TimeDisplay=""
-        print("----CONSOLE LOG----\n")
+         
         if not self.cityname.get():
-            showinfo("Warning", "Enter a name")
+            showinfo("Warning", "Enter a city name")
         else:
             url = f'https://wttr.in/{self.citynameCV.get()}?format=%l: {self.outputdisform}+ {self.TimeDisplay}'
             #f'https://wttr.in/{self.cityname}?format({self.outputformat[selected_value],self.TimeDisplayRB0,self.TimeDisplayRB1})'
@@ -176,6 +178,10 @@ class app(ttk.Frame):
          #print("here's ouput", self.outputval)
          self.current_time=''.join(self.outputvalrea[-1])
          self.local_time=''.join(self.outputvalrea[-2]) 
+         if self.current_time=="":
+             self.current_time="Null"
+         if self.local_time=="":
+             self.local_time="Null"
         #print(self.current_time,self.local_time)
          self.database()
         pass
@@ -218,11 +224,11 @@ class app(ttk.Frame):
         rowsval=print(*rows,sep='\n')
         #with open('weather.log', 'a',encoding='utf-8') as file:
          #print(*rows,sep='\n',file=file)
-         
+        sqlmessagelabels="---SQL Data Fields---\nSI.NO  Place  Output_Format  OutputFile  Local_Time  Current_Time"
         if showtable==True:
          message="\n".join([str(row) for row in rows])
          print(f"Showing Table{message}")
-         showinfo("SQL Table",message)	
+         showinfo("SQL Table",sqlmessagelabels+"\n"+message+"\n")	
         #Close the connection
         conn.close()
 
