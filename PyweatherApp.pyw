@@ -131,7 +131,7 @@ class app(ttk.Frame):
           self.TimeDisplay="%T"
         else:
          self.TimeDisplay=""
-	print("----CONSOLE LOG----\n")
+        print("----CONSOLE LOG----\n")
         if not self.cityname.get():
             showinfo("Warning", "Enter a name")
         else:
